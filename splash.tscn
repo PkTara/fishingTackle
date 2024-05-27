@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://8wnol0qq08ua"]
+
+[ext_resource type="Script" path="res://splash.gd" id="1_35e5d"]
+[ext_resource type="Texture2D" uid="uid://xijqlbrgbakc" path="res://antarticaBG.png" id="2_n1l06"]
+[ext_resource type="Texture2D" uid="uid://b1vslyqacq736" path="res://uiStart/label_continue.png" id="3_ko1o5"]
+[ext_resource type="Texture2D" uid="uid://bvsvlxgxcyck" path="res://fishPoleSign.png" id="3_sn2v6"]
+
+[sub_resource type="Theme" id="Theme_rtioa"]
+default_font_size = 5
+
+[sub_resource type="Theme" id="Theme_7awwo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hfd0"]
+font_size = 32
+
+[node name="marginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rtioa")
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_35e5d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_n1l06")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(640, 160)
+layout_mode = 2
+texture = ExtResource("3_sn2v6")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = SubResource("Theme_7awwo")
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_ko1o5")
+
+[node name="Version" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Version 0.2 - PkTara"
+label_settings = SubResource("LabelSettings_7hfd0")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

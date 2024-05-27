@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dms5xb4wto31p"]
+
+[ext_resource type="Script" path="res://Fish.gd" id="1_486on"]
+[ext_resource type="Texture2D" uid="uid://cti4ut85v8h6s" path="res://fish.png" id="2_yssuw"]
+
+[node name="Fish" type="CharacterBody2D" groups=["fish"]]
+process_mode = 1
+position = Vector2(228, 425)
+scale = Vector2(3, 3)
+script = ExtResource("1_486on")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yssuw")
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(9.33334, -0.666672, 6.33334, -6.33333, -13.6667, -6.33333, -13.6667, 4.33333, 4, 4)
