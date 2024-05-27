@@ -92,7 +92,7 @@ size = Vector2(67, 120)
 size = Vector2(26, 711)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grls3"]
-size = Vector2(33, 720.25)
+size = Vector2(17.5, 720.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abyy0"]
 size = Vector2(1199.5, 48)
@@ -143,7 +143,7 @@ position = Vector2(-32, 354)
 shape = SubResource("RectangleShape2D_75jqj")
 
 [node name="right" type="CollisionShape2D" parent="TankWalls"]
-position = Vector2(1150, 346.125)
+position = Vector2(1142.25, 346.125)
 shape = SubResource("RectangleShape2D_grls3")
 
 [node name="down" type="CollisionShape2D" parent="TankWalls"]
@@ -311,6 +311,10 @@ autoplay = true
 
 [node name="FishDeath" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_rri6f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(533, 353)
+zoom = Vector2(1.5, 1.5)
 
 [connection signal="playerCaughtFish" from="Player" to="." method="_on_player_player_caught_fish"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
